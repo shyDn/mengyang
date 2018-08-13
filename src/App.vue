@@ -1,9 +1,7 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>This is my first VUE project!!!</h1>
+  <!-- <div id="app"> -->
     <router-view/>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -12,6 +10,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  @import "./App.scss"
+<style lang="scss" src="./App.scss">
 </style>
+

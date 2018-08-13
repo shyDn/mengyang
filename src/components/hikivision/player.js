@@ -1,5 +1,6 @@
 window.onload = function () {
   var player = new EZUIPlayer('myPlayer');
+  var player1 = new EZUIPlayer('myPlayer1')
   console.log('@@@@@@@@@@@@@@')
   // // 日志
   // player.on('log', log);

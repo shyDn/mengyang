@@ -11,11 +11,10 @@
 </template>
 
 <script>
-import hpshy from './test/index.js'
-import Vue from 'vue'
-Vue.use(hpshy)
+import HomePageShy from './test/HPShy'
 export default {
   name: 'RouterTest',
+  components: { 'hpshy': HomePageShy },
   data () {
     return {
       msg: 'RouterTest Vue'

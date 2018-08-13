@@ -1,0 +1,34 @@
+
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+  float: left;
+  &:hover {
+    color: #1890ff
+  }
+}
+
+.collapse {
+  float: right;
+}
+
+.router-view {
+  margin: 24px 16px;
+  background: #fff;
+  text-align: center;
+  height: 100%;
+}
+
+.header {
+  background: white;
+  padding: 0;
+  z-index: 1;
+}
+
+.content {
+  min-height: calc(100vh-69px);
+}

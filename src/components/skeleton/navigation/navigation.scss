@@ -1,0 +1,20 @@
+.sider {
+  min-height: 100vh;
+  .title {
+    background: #fff;
+    margin: 16px;
+    text-align: center;
+    height: 40px;
+  }
+  .nav-text {
+    color: #fff;
+  }
+}
+
+.ant-menu-item {
+  text-align: left;
+}
+.ant-menu-submenu{
+  text-align: left;
+}
+

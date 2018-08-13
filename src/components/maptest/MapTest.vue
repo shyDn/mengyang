@@ -2,7 +2,7 @@
   <div>
     <div class="shy">BAIDU MAP TEST</div>
     <baidu-map class="bm-view" ak="QwRNizaywxTbk8SyNAa4RkPpP77IGb7q" :scrollWheelZoom="false" center="上海市浦东新区X607(华夏中路)"
-      v-bind:zoom="zoomValue" :minZoom="minZoom" :maxZoom="maxZoom">
+      :zoom.sync="zoomValue" :minZoom="minZoom" :maxZoom="maxZoom">
       <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
       <bm-control>
         <button @click="zoomTo(15)">back</button>
@@ -35,7 +35,7 @@ export default {
     zoomTo(value) {
       if (value) {
         this.zoomValue = value;
-        BaiduMap.reset();
+        // BaiduMap.reset();
       } else {
         this.zoomValue = this.zoomValue === this.maxZoom ? this.minZoom : ++this.zoomValue
       }
