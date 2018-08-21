@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Monitor from '@/components/monitor'
-import RouterTest from '@/components/RouterTest'
-import HomePage from '@/components/HP'
-import HomePageShy from '@/components/test/HPShy'
 import Skeleton from '@/components/skeleton/skeleton'
 import Dashboard from '@/components/dashboard/dashboard'
 import Privilege from '@/components/privilege/privilege'
@@ -38,7 +35,6 @@ export default new Router({
       children: [
         { path: '', name: 'dashboard', component: Dashboard},
         { path: 'maptest', component: resolve => require(['@/components/maptest/MapTest'], resolve)},
-        { path: 'hp', component: HomePageShy},
         { path: 'video', component: resolve => require(['@/components/hikivision/VideoTest'], resolve)},
         {
           path: 'privilege',
@@ -53,16 +49,6 @@ export default new Router({
           ]
         }
       ]
-    },
-    {
-      path: '/homepage',
-      name: 'HomePage',
-      component: HomePage
-    },
-    {
-      path: '/routertest',
-      name: 'RouterTest',
-      component: RouterTest
     },
     {
       path: '/videotest',
