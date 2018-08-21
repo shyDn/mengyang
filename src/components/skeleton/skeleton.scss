@@ -14,11 +14,20 @@
 
 .collapse {
   float: right;
+  line-height: 64px;
+}
+.company-name {
+  float: left;
+  font-family: 'Microsoft Tai Le Bold', 'Microsoft Tai Le Regular', 'Microsoft Tai Le';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  color: rgba(0, 0, 0, 0.847058823529412);
+  line-height: 64px;
 }
 
 .router-view {
   margin: 24px 16px;
-  background: #fff;
   text-align: center;
   height: 100%;
 }
@@ -31,4 +40,10 @@
 
 .content {
   min-height: calc(100vh-69px);
+}
+
+.icon {
+  margin-right: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }

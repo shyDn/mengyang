@@ -9,7 +9,6 @@
 
 <script>
 import { DatePicker } from 'vue-antd-ui';
-// import DatePicker from 'vue-antd-ui/lib/date-picker'
 export default {
   name: 'HomePageShy',
   components: {

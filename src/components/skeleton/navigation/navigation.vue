@@ -1,8 +1,31 @@
 <template>
-  <a-layout-sider class="sider" :trigger="null"
+  <a-layout-sider class="sider" :trigger="null" width="256px"
     collapsible v-model="collapsed">
-    <div class="title">蒙羊Logo</div>
-    <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['1']">
+    <div class="logo"><img src="@/assets/u5.png"></div>
+    <a-menu theme="dark" mode="inline" :defaultSelectedKeys="['0.1']">
+      <a-sub-menu key="0">
+        <span slot="title"><a-icon type="home" /><span>权限管理</span></span>
+        <a-menu-item key="0.1">
+          <router-link to="/privilege/companies">
+            <span class="nav-text">公司管理</span>
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="0.2">
+          <router-link to="/privilege/roles">
+            <span class="nav-text">角色管理</span>
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="0.3">
+          <router-link to="/privilege/users">
+            <span class="nav-text">用户管理</span>
+          </router-link>
+        </a-menu-item>
+        <a-menu-item key="0.4">
+          <router-link to="/privilege/logs">
+            <span class="nav-text">操作日志</span>
+          </router-link>
+        </a-menu-item>
+      </a-sub-menu>
       <a-menu-item key="1">
         <router-link to="/">
           <a-icon type="upload" />
@@ -16,9 +39,9 @@
         </router-link>
       </a-menu-item>
       <a-menu-item key="3">
-        <router-link to="/hp">
+        <router-link to="/monitor" target="_blank">
           <a-icon type="bar-chart" />
-          <span class="nav-text">HP Shy Test</span>
+          <span class="nav-text">大屏显示</span>
         </router-link>
       </a-menu-item>
       <a-menu-item key="4">
@@ -29,7 +52,13 @@
       </a-menu-item>
       <a-sub-menu key="5">
         <span slot="title"><a-icon type="mail" /><span>nav 5</span></span>
-        <a-menu-item key="5.1" @click="goTO('map')">Option 5</a-menu-item>
+        <a-sub-menu key="5.1">
+          <span slot="title"><a-icon type="mail" /><span>nav 5.1</span></span>
+          <a-menu-item key="5.1.1">Option 5.1.1</a-menu-item>
+          <a-menu-item key="5.1.2">Option 5.1.2</a-menu-item>
+          <a-menu-item key="5.1.3">Option 5.1.3</a-menu-item>
+          <a-menu-item key="5.1.4">Option 5.1.4</a-menu-item>
+        </a-sub-menu>
         <a-menu-item key="5.2">Option 6</a-menu-item>
         <a-menu-item key="5.3">Option 7</a-menu-item>
         <a-menu-item key="5.4">Option 8</a-menu-item>
@@ -59,6 +88,18 @@
   export default {
     name: 'Navigation',
     props: ['collapsed'],
+    data() {
+      return {
+        collapsedStyle: {flex: '0 0 102px', maxWidth: '102px', minWidth: '102px', width: '102px'},
+        normalStyle: {flex: '0 0 256px', maxWidth: '256px', minWidth: '256px', width: '256px'},
+        siderStyle: this.normalStyle,
+      }
+    },
+    watch: {
+      'collapsed': function(collapsed){
+        this.siderStyle = collapsed ? this.collapsedStyle : this.normalStyle;
+      }
+    },
     components: {
       'a-layout-sider': Layout.Sider,
       'a-menu': Menu,

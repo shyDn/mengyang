@@ -33,5 +33,5 @@
 
 
 <style lang="postcss" scoped>
-  @import "./Video.scss"
+  @import "./video.scss"
 </style>

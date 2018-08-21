@@ -1,14 +1,32 @@
 .sider {
   min-height: 100vh;
-  .title {
-    background: #fff;
-    margin: 16px;
+  width:256px;
+  .logo {
+    background-color: rgba(255, 255, 255, 0.849);
     text-align: center;
-    height: 40px;
+    height: 64px;
+    line-height: 64px;
+
+    img {
+      width:200px;
+      height:26px
+    }
   }
   .nav-text {
     color: #fff;
   }
+}
+.ant-layout-sider {
+  flex: 0 0 256px;
+  max-width: 256px;
+  min-width: 256px;
+  width: 256px;
+}
+.ant-layout-sider-collapsed{
+  flex: 0 0 102px;
+  max-width: 102px;
+  min-width: 102px;
+  width: 102px;
 }
 
 .ant-menu-item {

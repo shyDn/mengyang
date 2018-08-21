@@ -6,6 +6,7 @@ import HomePage from '@/components/HP'
 import HomePageShy from '@/components/test/HPShy'
 import Skeleton from '@/components/skeleton/skeleton'
 import Dashboard from '@/components/dashboard/dashboard'
+import Privilege from '@/components/privilege/privilege'
 
 Vue.use(Router)
 
@@ -36,9 +37,21 @@ export default new Router({
       component: Skeleton,
       children: [
         { path: '', name: 'dashboard', component: Dashboard},
-        { path: '/maptest', component: resolve => require(['@/components/maptest/MapTest'], resolve)},
-        { path: '/hp', component: HomePageShy},
-        { path: '/video', component: resolve => require(['@/components/hikivision/VideoTest'], resolve)}
+        { path: 'maptest', component: resolve => require(['@/components/maptest/MapTest'], resolve)},
+        { path: 'hp', component: HomePageShy},
+        { path: 'video', component: resolve => require(['@/components/hikivision/VideoTest'], resolve)},
+        {
+          path: 'privilege',
+          component: Privilege,
+          children: [
+            { path: 'companies', component: resolve => require(['@/components/privilege/companies/companies'], resolve)},
+            { path: 'companies/access', component: resolve => require(['@/components/privilege/companies/company-access'], resolve)},
+            { path: 'roles', component: resolve => require(['@/components/privilege/roles/role'], resolve)},
+            { path: 'roles/access', component: resolve => require(['@/components/privilege/roles/role-access'], resolve)},
+            { path: 'users', component: resolve => require(['@/components/privilege/users/users'], resolve)},
+            { path: "logs", component: resolve => require(['@/components/privilege/logs/logs'], resolve)}
+          ]
+        }
       ]
     },
     {
@@ -51,15 +64,9 @@ export default new Router({
       name: 'RouterTest',
       component: RouterTest
     },
-    // {
-    //   path: '/maptest',
-    //   name: 'MapTest',
-    //   component: resolve => require(['@/components/maptest/MapTest'], resolve)
-    // },
     {
       path: '/videotest',
       name: 'VideoTest',
-      // component: VideoTest
       component: resolve => require(['@/components/hikivision/VideoTest'], resolve)
     }
   ]
