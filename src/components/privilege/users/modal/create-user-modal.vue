@@ -36,14 +36,8 @@
           :labelCol="{ span: 5 }"
           :wrapperCol="{ span: 12 }"
           fieldDecoratorId="role"
-          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入' }]}">
-          <a-input />
-          <a-select mode="multiple" :defaultValue="['role1', 'role2']">
-            <a-select-option :key="'role1'">角色1</a-select-option>
-            <a-select-option :key="'role2'">角色2</a-select-option>
-            <a-select-option :key="'role3'">角色3</a-select-option>
-          </a-select>
-          <a-select mode="multiple" :defaultValue="['role1', 'role2']">
+          :fieldDecoratorOptions="{rules: [{ required: true, message: '请输入' }],initialValue: ['role1', 'role2']}">
+          <a-select mode="multiple">
             <a-select-option :key="'role1'">角色1</a-select-option>
             <a-select-option :key="'role2'">角色2</a-select-option>
             <a-select-option :key="'role3'">角色3</a-select-option>
